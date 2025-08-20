@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Algoritm-me</title>
+    <meta name="description" content="Uma aplicação web interativa para visualizar a execução de algoritmos de ordenação, busca e grafos.">
+	<link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Algoritm-me</h1>
+        <nav class="main-nav">
+            <a href="#" data-view="home">Início</a>
+            <a href="#" data-view="simulator">Simulador</a>
+            <a href="#" data-view="about">Sobre</a>
+        </nav>
+    </header>
+
+    <main id="app-router-view">
+		<img src="assets/images/stars-cover.png" alt="Estrelas azuis.">
+   	</main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 - Lançado sob a Licença MIT.</p>
+    </footer>
+
+    <template id="view-home">
+        <section class="page-content">
+            <h2>Bem-vindo ao Algoritm-me, seu simulador interativo de algoritmos!</h2>
+            <p>Este projeto permite (pretende permitir!) visualizar passo a passo a execução de algoritmos clássicos.</p>
+            <p>O objetivo é auxiliar no aprendizado prático de algoritmos e estruturas de dados de uma forma dinâmica e visual. Clique em "Simulador" no menu acima para começar!</p>
+        </section>
+    </template>
+
+    <template id="view-simulator">
+        <div class="simulator-container">
+            <aside class="controls-panel">
+                <h3>Controles</h3>
+                
+                <div class="control-group">
+                    <label for="algorithm-select">1. Escolha o Algoritmo:</label>
+                    <select id="algorithm-select">
+                        <option value="bubbleSort">Bubble Sort</option>
+                        <option value="insertionSort">Insertion Sort</option>
+                        <option value="mergeSort">Merge Sort</option>
+                        </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="data-input">2. Insira os Dados (números separados por vírgula):</label>
+                    <textarea id="data-input" rows="3" placeholder="Ex: 5, 3, 8, 1, 9"></textarea>
+                </div>
+                
+                <div class="control-group">
+                        <button id="btn-start">Iniciar</button>
+                </div>
+
+            </aside>
+            <main class="visualization-area">
+                <canvas id="desenho-canvas" width="800" height="500">
+                    Seu navegador não suporta o elemento Canvas.
+                </canvas>
+            </main>
+        </div>
+    </template>
+
+	<template id="view-about">
+		Nada ainda
+	</template>
+
+    <script src="js/main.js" type="module" defer></script>
+
+</body>
+</html>
